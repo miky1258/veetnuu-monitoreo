@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Dashboard } from './dashboard';
+import { BarraSuperior } from './barra-superior';
 
-describe('Dashboard', () => {
-  let component: Dashboard;
-  let fixture: ComponentFixture<Dashboard>;
+describe('BarraSuperior', () => {
+  let component: BarraSuperior;
+  let fixture: ComponentFixture<BarraSuperior>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Dashboard],
+      imports: [BarraSuperior],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Dashboard);
+    fixture = TestBed.createComponent(BarraSuperior);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

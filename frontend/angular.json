@@ -10,7 +10,25 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "type": "component"
+        },
+        "@schematics/angular:directive": {
+          "type": "directive"
+        },
+        "@schematics/angular:service": {
+          "type": "service"
+        },
+        "@schematics/angular:pipe": {
+          "type": "pipe"
+        },
+        "@schematics/angular:guard": {
+          "typeSeparator": ".",
+          "type": "guard"
+        },
+        "@schematics/angular:interceptor": {
+          "typeSeparator": ".",
+          "type": "interceptor"
         }
       },
       "root": "",
