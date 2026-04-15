@@ -1,5 +1,7 @@
 <div class="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.18),_transparent_35%),linear-gradient(to_bottom,_rgba(2,6,23,0.75),_rgba(2,6,23,0.96))]"></div>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.18),_transparent_35%),linear-gradient(to_bottom,_rgba(2,6,23,0.75),_rgba(2,6,23,0.96))]"
+  ></div>
 
   <div class="relative z-10 flex min-h-screen flex-col">
     <header class="px-6 py-4">
@@ -9,8 +11,22 @@
     <main class="flex flex-1 items-center justify-center px-4 py-8">
       <div class="w-full max-w-5xl">
         <div class="mx-auto flex max-w-md flex-col items-center">
-          <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
-            <span class="text-2xl">🛡️</span>
+          <div
+            class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              class="h-8 w-8 text-slate-200"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3l7 3v6c0 4.5-2.8 7.5-7 9-4.2-1.5-7-4.5-7-9V6l7-3z"></path>
+              <path d="M12 8v8"></path>
+            </svg>
           </div>
 
           <h1 class="text-center text-4xl font-semibold tracking-wide text-white">
@@ -18,7 +34,7 @@
           </h1>
 
           <p class="mt-2 text-center text-sm uppercase tracking-[0.35em] text-slate-400">
-            Centro de Monitoreo 
+            Centro de Monitoreo V2.0
           </p>
 
           <section
@@ -57,7 +73,9 @@
                 />
               </div>
 
-              <div class="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-slate-400">
+              <div
+                class="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-slate-400"
+              >
                 <span class="h-2 w-2 rounded-full bg-rose-300"></span>
                 <span>Conexión encriptada activa</span>
               </div>
@@ -74,33 +92,18 @@
                   type="button"
                   class="text-xs uppercase tracking-[0.18em] text-slate-400 transition hover:text-slate-200"
                 >
-                  Request Access
+                  Solicitar acceso
                 </button>
               </div>
             </form>
           </section>
 
-          <div class="mt-6 grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
-            <div class="rounded-xl border border-white/10 bg-blue-950/40 px-4 py-3 backdrop-blur-sm">
-              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400">
-                Global Status
-              </p>
-              <p class="mt-1 text-sm font-semibold text-slate-100">Nominal</p>
-            </div>
-
-            <div class="rounded-xl border border-white/10 bg-blue-950/40 px-4 py-3 backdrop-blur-sm">
-              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400">
-                Threat Level
-              </p>
-              <p class="mt-1 text-sm font-semibold text-amber-300">Elevated</p>
-            </div>
-          </div>
-
           <div class="mt-10 max-w-3xl text-center">
             <p class="text-[10px] uppercase leading-5 tracking-[0.2em] text-slate-500">
-              Warning: Unauthorized access to this system is strictly prohibited.
-              All activities are monitored and recorded. Failure to comply with
-              security protocols may result in disciplinary action and legal consequences.
+              Advertencia: el acceso no autorizado a este sistema está estrictamente
+              prohibido. Todas las actividades son monitoreadas y registradas. El
+              incumplimiento de los protocolos de seguridad puede derivar en acciones
+              disciplinarias y consecuencias legales.
             </p>
           </div>
         </div>

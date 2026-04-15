@@ -1,0 +1,54 @@
+<section class="min-h-[calc(100vh-105px)] rounded-2xl bg-[#081c38]">
+  <div class="relative h-full overflow-hidden rounded-2xl border border-[#18375f]">
+    <div
+      leaflet
+      class="mapa-leaflet h-full w-full"
+      [leafletOptions]="opciones"
+      [leafletLayers]="capas"
+      (leafletMapReady)="onMapReady($event)"
+    ></div>
+
+    <div class="absolute bottom-6 right-6 z-[500] flex flex-col gap-3">
+      <button
+        type="button"
+        class="flex h-12 w-12 items-center justify-center rounded-md bg-[#152848] text-slate-100 shadow-lg transition hover:bg-[#1c355b]"
+        aria-label="Acercar mapa"
+        (click)="acercarMapa()"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          class="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 5v14"></path>
+          <path d="M5 12h14"></path>
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        class="flex h-12 w-12 items-center justify-center rounded-md bg-[#152848] text-slate-100 shadow-lg transition hover:bg-[#1c355b]"
+        aria-label="Alejar mapa"
+        (click)="alejarMapa()"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          class="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M5 12h14"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

@@ -5,6 +5,10 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './barra-superior.component.html',
-  styleUrl: './barra-superior.component.scss',
+  styleUrls: ['./barra-superior.component.scss'],
 })
-export class BarraSuperiorComponent {}
+export class BarraSuperiorComponent {
+  readonly nombreSistema = "VE'ETNU'U";
+  readonly estadoSistema = 'Online';
+  readonly totalAlertasActivas = 14;
+}

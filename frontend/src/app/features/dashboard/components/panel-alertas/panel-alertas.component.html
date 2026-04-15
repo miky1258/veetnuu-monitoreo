@@ -1,0 +1,49 @@
+<section class="flex min-h-[calc(100vh-105px)] flex-col rounded-2xl bg-[#04152d] px-4 py-5">
+  <div class="mb-5 flex items-center justify-between">
+    <h1 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-200">
+      Active Alerts
+    </h1>
+
+    <span
+      class="rounded bg-red-600 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white"
+    >
+      Live
+    </span>
+  </div>
+
+  <div class="mb-5 flex flex-wrap gap-2">
+    @for (filtro of filtros; track filtro.etiqueta) {
+      <button
+        type="button"
+        class="rounded-md px-3 py-2 text-xs font-semibold transition"
+        [class.bg-slate-200]="filtro.activo"
+        [class.text-slate-900]="filtro.activo"
+        [class.bg-[#102847]]="!filtro.activo"
+        [class.text-slate-300]="!filtro.activo"
+        [class.hover:bg-[#163258]]="!filtro.activo"
+      >
+        {{ filtro.etiqueta }}
+      </button>
+    }
+  </div>
+
+  @if (alertas.length > 0) {
+    <div class="flex-1 space-y-3 overflow-auto pr-1">
+      @for (alerta of alertas; track alerta.id) {
+        <app-tarjeta-alerta
+          [alerta]="alerta"
+          (seleccionar)="onAlertaSeleccionada($event)"
+        />
+      }
+    </div>
+  } @else {
+    <div class="flex flex-1 items-center justify-center">
+      <div class="max-w-xs text-center">
+        <p class="text-sm font-medium text-slate-300">Sin alertas disponibles</p>
+        <p class="mt-2 text-xs leading-5 text-slate-500">
+          Cuando el backend envíe incidencias activas, este panel las mostrará aquí.
+        </p>
+      </div>
+    </div>
+  }
+</section>
