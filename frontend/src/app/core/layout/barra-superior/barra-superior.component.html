@@ -65,6 +65,15 @@
       </svg>
     </button>
 
+    <div class="ml-2 hidden text-right sm:block">
+      <p class="text-sm font-medium text-slate-200">
+        {{ sesionActual()?.nombre || 'Usuario' }}
+      </p>
+      <p class="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+        {{ sesionActual()?.rol || 'Sin rol' }}
+      </p>
+    </div>
+
     <button
       type="button"
       class="ml-1 flex h-10 w-10 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/5 transition hover:bg-white/10"
@@ -72,7 +81,7 @@
       title="Perfil de usuario"
     >
       <span class="flex h-full w-full items-center justify-center bg-slate-700 text-xs font-semibold text-slate-200">
-        JP
+        {{ inicialesUsuario() }}
       </span>
     </button>
   </div>
