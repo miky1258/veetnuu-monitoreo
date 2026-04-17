@@ -16,7 +16,9 @@ interface FiltroAlerta {
 })
 export class PanelAlertasComponent {
   @Input() alertas: AlertaActiva[] = [];
+
   @Output() alertaSeleccionada = new EventEmitter<AlertaActiva>();
+  @Output() detalleSolicitado = new EventEmitter<AlertaActiva>();
 
   readonly filtros: FiltroAlerta[] = [
     { etiqueta: 'All', activo: true },
@@ -27,5 +29,9 @@ export class PanelAlertasComponent {
 
   onAlertaSeleccionada(alerta: AlertaActiva): void {
     this.alertaSeleccionada.emit(alerta);
+  }
+
+  onDetalleSolicitado(alerta: AlertaActiva): void {
+    this.detalleSolicitado.emit(alerta);
   }
 }

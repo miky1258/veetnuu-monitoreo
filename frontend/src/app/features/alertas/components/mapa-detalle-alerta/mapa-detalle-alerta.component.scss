@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.mapa-detalle {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #081c38;
+}
+
+:host ::ng-deep .contenedor-marcador-punto {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+:host ::ng-deep .marcador-punto {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #f6b2b2;
+  border: 2px solid #1d2c49;
+  box-shadow: 0 0 0 5px rgba(246, 178, 178, 0.14);
+}

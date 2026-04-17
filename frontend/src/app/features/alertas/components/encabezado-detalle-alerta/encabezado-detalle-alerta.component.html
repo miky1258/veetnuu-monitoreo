@@ -1,0 +1,60 @@
+<header class="flex items-center justify-between border-b border-[#1a2f54] bg-[#0c1c39] px-6 py-3">
+  <div class="flex items-center gap-4">
+    <a
+      routerLink="/dashboard"
+      class="flex h-10 w-10 items-center justify-center rounded-md text-slate-300 transition hover:bg-white/5 hover:text-white"
+      aria-label="Volver al dashboard"
+      title="Volver"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        class="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M19 12H5"></path>
+        <path d="M12 19l-7-7 7-7"></path>
+      </svg>
+    </a>
+
+    <div>
+      <h1 class="text-[1.05rem] font-semibold text-slate-100">
+        {{ alerta.folio }}
+      </h1>
+      <p class="text-xs uppercase tracking-[0.22em] text-slate-400">
+        Active Tactical View
+      </p>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <span
+      class="inline-flex items-center gap-2 rounded bg-rose-900/70 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-rose-100"
+    >
+      <span class="h-2 w-2 rounded-full bg-rose-300"></span>
+      Live Transmission
+    </span>
+
+    <button
+      type="button"
+      class="flex h-10 w-10 items-center justify-center rounded-md text-slate-300 transition hover:bg-white/5 hover:text-white"
+      aria-label="Más opciones"
+      title="Más opciones"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        class="h-5 w-5"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="5" r="1.8"></circle>
+        <circle cx="12" cy="12" r="1.8"></circle>
+        <circle cx="12" cy="19" r="1.8"></circle>
+      </svg>
+    </button>
+  </div>
+</header>

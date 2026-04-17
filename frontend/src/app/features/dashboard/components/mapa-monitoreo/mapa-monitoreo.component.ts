@@ -5,7 +5,9 @@ import {
   NgZone,
   OnChanges,
   SimpleChanges,
+  inject,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import * as L from 'leaflet';
 import { AlertaActiva } from '../../interfaces/alerta-activa.interface';
@@ -19,6 +21,8 @@ import { MarcadorMapa } from '../../interfaces/marcador-mapa.interface';
   styleUrls: ['./mapa-monitoreo.component.scss'],
 })
 export class MapaMonitoreoComponent implements AfterViewInit, OnChanges {
+  private readonly router = inject(Router);
+
   @Input() marcadores: MarcadorMapa[] = [];
 
   @Input()
@@ -112,6 +116,29 @@ export class MapaMonitoreoComponent implements AfterViewInit, OnChanges {
         offset: L.point(0, -12),
       });
 
+      marker.on('popupopen', (evento) => {
+        const popupElement = evento.popup.getElement();
+
+        if (!popupElement) {
+          return;
+        }
+
+        const enlaceDetalle = popupElement.querySelector(
+          `[data-detalle-id="${marcador.id}"]`
+        );
+
+        if (enlaceDetalle) {
+          enlaceDetalle.addEventListener('click', (clickEvent) => {
+            clickEvent.preventDefault();
+            clickEvent.stopPropagation();
+
+            this.ngZone.run(() => {
+              void this.router.navigate(['/dashboard/alertas', marcador.id]);
+            });
+          });
+        }
+      });
+
       marker.on('click', () => {
         this.ngZone.run(() => {
           if (this.mapa) {
@@ -172,6 +199,13 @@ export class MapaMonitoreoComponent implements AfterViewInit, OnChanges {
         </div>
         <div class="tarjeta-alerta-popup__titulo">${titulo}</div>
         <div class="tarjeta-alerta-popup__subtitulo">${descripcion}</div>
+        <button
+          type="button"
+          class="tarjeta-alerta-popup__detalle"
+          data-detalle-id="${marcador.id}"
+        >
+          Ver detalles
+        </button>
       </div>
     `;
   }

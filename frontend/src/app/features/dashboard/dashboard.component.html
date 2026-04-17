@@ -3,6 +3,7 @@
     <app-panel-alertas
       [alertas]="alertas"
       (alertaSeleccionada)="seleccionarAlerta($event)"
+      (detalleSolicitado)="verDetalleAlerta($event)"
     />
 
     <app-mapa-monitoreo

@@ -17,6 +17,14 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'dashboard/alertas/:id',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./features/alertas/pages/detalle-alerta/detalle-alerta.component').then(
+        (m) => m.DetalleAlertaComponent
+      ),
+  },
+  {
     path: '',
     canActivate: [authGuard],
     loadComponent: () =>

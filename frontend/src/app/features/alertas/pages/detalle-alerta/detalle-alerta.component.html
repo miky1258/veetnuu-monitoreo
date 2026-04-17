@@ -1,0 +1,22 @@
+<div class="flex min-h-screen flex-col bg-[#0b1730] text-slate-100">
+  @if (alerta(); as alertaActual) {
+    <app-encabezado-detalle-alerta [alerta]="alertaActual" />
+
+    <main class="grid flex-1 xl:grid-cols-[minmax(0,1fr)_320px]">
+      <app-mapa-detalle-alerta [alerta]="alertaActual" />
+
+      <app-panel-detalle-alerta [alerta]="alertaActual" />
+    </main>
+  } @else {
+    <div class="flex min-h-screen items-center justify-center px-6">
+      <div class="text-center">
+        <h1 class="text-xl font-semibold text-slate-100">
+          Alerta no encontrada
+        </h1>
+        <p class="mt-2 text-sm text-slate-400">
+          No fue posible cargar el detalle táctico solicitado.
+        </p>
+      </div>
+    </div>
+  }
+</div>

@@ -10,7 +10,9 @@ import { AlertaActiva } from '../../interfaces/alerta-activa.interface';
 })
 export class TarjetaAlertaComponent {
   @Input({ required: true }) alerta!: AlertaActiva;
+
   @Output() seleccionar = new EventEmitter<AlertaActiva>();
+  @Output() verDetalle = new EventEmitter<AlertaActiva>();
 
   obtenerClasesTarjeta(): string {
     if (this.alerta.prioridad === 'alta') {
@@ -32,5 +34,10 @@ export class TarjetaAlertaComponent {
 
   onSeleccionar(): void {
     this.seleccionar.emit(this.alerta);
+  }
+
+  onVerDetalle(event: Event): void {
+    event.stopPropagation();
+    this.verDetalle.emit(this.alerta);
   }
 }

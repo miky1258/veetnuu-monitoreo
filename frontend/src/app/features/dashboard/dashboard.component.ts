@@ -1,4 +1,5 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
+import { Router } from '@angular/router';
 import { PanelAlertasComponent } from './components/panel-alertas/panel-alertas.component';
 import { MapaMonitoreoComponent } from './components/mapa-monitoreo/mapa-monitoreo.component';
 import { AlertaActiva } from './interfaces/alerta-activa.interface';
@@ -12,6 +13,8 @@ import { MarcadorMapa } from './interfaces/marcador-mapa.interface';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
+  private readonly router = inject(Router);
+
   readonly alertas: AlertaActiva[] = [
     {
       id: 'a1',
@@ -42,5 +45,9 @@ export class DashboardComponent {
 
   seleccionarAlerta(alerta: AlertaActiva): void {
     this.alertaSeleccionada.set({ ...alerta });
+  }
+
+  verDetalleAlerta(alerta: AlertaActiva): void {
+    void this.router.navigate(['/dashboard/alertas', alerta.id]);
   }
 }

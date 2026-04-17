@@ -97,15 +97,29 @@
     </span>
   </div>
 
-  @if (alerta.prioridad === 'alta') {
-    <div class="mt-4 flex items-center justify-between">
+  <div class="mt-4 flex items-center justify-between">
+    @if (alerta.prioridad === 'alta') {
       <div class="h-1.5 w-24 rounded-full bg-white/20">
         <div class="h-1.5 w-20 rounded-full bg-red-300"></div>
       </div>
+    } @else {
+      <div></div>
+    }
 
-      <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-red-200">
-        {{ obtenerEtiquetaPrioridad() }}
-      </span>
+    <div class="flex items-center gap-4">
+      @if (alerta.prioridad === 'alta') {
+        <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-red-200">
+          {{ obtenerEtiquetaPrioridad() }}
+        </span>
+      }
+
+      <button
+        type="button"
+        (click)="onVerDetalle($event)"
+        class="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-200 underline underline-offset-4 transition hover:text-white"
+      >
+        Ver detalles
+      </button>
     </div>
-  }
+  </div>
 </article>
