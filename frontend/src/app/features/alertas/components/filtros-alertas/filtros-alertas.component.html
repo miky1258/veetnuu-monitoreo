@@ -1,0 +1,74 @@
+<section class="rounded-2xl bg-[#0b2243] px-4 py-4">
+  <form
+    [formGroup]="formularioFiltros"
+    (ngSubmit)="aplicarFiltros()"
+    class="grid gap-4 xl:grid-cols-[1fr_1fr_1fr_170px_170px]"
+  >
+    <div>
+      <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+        Severidad
+      </label>
+      <select
+        formControlName="severidad"
+        class="w-full rounded-md border border-transparent bg-[#07162f] px-4 py-3 text-sm text-slate-300 outline-none transition focus:border-slate-500"
+      >
+        <option value="">Todas las severidades</option>
+        <option value="alta">Alta</option>
+        <option value="media">Media</option>
+        <option value="normal">Normal</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+        Estado
+      </label>
+      <select
+        formControlName="estado"
+        class="w-full rounded-md border border-transparent bg-[#07162f] px-4 py-3 text-sm text-slate-300 outline-none transition focus:border-slate-500"
+      >
+        <option value="">Todos los estados</option>
+        <option value="activa">Activa</option>
+        <option value="en_ruta">En ruta</option>
+        <option value="atendida">Atendida</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+        Tipo de incidente
+      </label>
+      <select
+        formControlName="tipoIncidente"
+        class="w-full rounded-md border border-transparent bg-[#07162f] px-4 py-3 text-sm text-slate-300 outline-none transition focus:border-slate-500"
+      >
+        <option value="">Todos los tipos</option>
+        <option value="robo">Robo</option>
+        <option value="accidente">Accidente</option>
+        <option value="medica">Médica</option>
+        <option value="alarma">Alarma</option>
+        <option value="incendio">Incendio</option>
+        <option value="intrusion">Intrusión</option>
+      </select>
+    </div>
+
+    <div class="flex items-end">
+      <button
+        type="submit"
+        class="w-full rounded-md bg-slate-300 px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-slate-900 transition hover:bg-white"
+      >
+        Aplicar
+      </button>
+    </div>
+
+    <div class="flex items-end">
+      <button
+        type="button"
+        (click)="limpiarFiltros()"
+        class="w-full rounded-md bg-[#1a2d4e] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-slate-200 transition hover:bg-[#23385f]"
+      >
+        Limpiar
+      </button>
+    </div>
+  </form>
+</section>

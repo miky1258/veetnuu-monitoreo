@@ -33,6 +33,13 @@ export const routes: Routes = [
       ),
     children: [
       {
+        path: 'dashboard/alertas',
+        loadComponent: () =>
+          import('./features/alertas/pages/panel-alertas-page/panel-alertas-page.component').then(
+            (m) => m.PanelAlertasPageComponent
+          ),
+      },
+      {
         path: 'dashboard',
         loadComponent: () =>
           import('./features/dashboard/dashboard.component').then(

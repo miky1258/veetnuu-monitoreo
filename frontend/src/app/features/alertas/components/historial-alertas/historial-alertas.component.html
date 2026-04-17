@@ -1,0 +1,72 @@
+<section class="rounded-2xl bg-[#0f2343] p-5">
+  <div class="mb-5 flex items-center justify-between">
+    <h2 class="text-2xl font-semibold text-slate-100">Historial de incidentes</h2>
+
+    <div class="flex items-center gap-2">
+      <button
+        type="button"
+        class="rounded-md bg-[#1a2d4e] px-3 py-2 text-xs font-semibold text-slate-100"
+      >
+        Tabla
+      </button>
+      <button
+        type="button"
+        class="rounded-md bg-[#07162f] px-3 py-2 text-xs font-semibold text-slate-400"
+      >
+        Línea de tiempo
+      </button>
+    </div>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full min-w-[900px] border-separate border-spacing-y-2">
+      <thead>
+        <tr class="text-left text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+          <th class="px-4 py-3">ID</th>
+          <th class="px-4 py-3">Incidente</th>
+          <th class="px-4 py-3">Tipo</th>
+          <th class="px-4 py-3">Ubicación</th>
+          <th class="px-4 py-3">Severidad</th>
+          <th class="px-4 py-3">Estado</th>
+          <th class="px-4 py-3">Hora</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (item of historial; track item.id) {
+          <tr class="bg-[#102847] text-sm text-slate-200">
+            <td class="rounded-l-lg px-4 py-4 text-slate-400">{{ item.codigo }}</td>
+            <td class="px-4 py-4 font-medium text-slate-100">{{ item.incidente }}</td>
+            <td class="px-4 py-4">{{ formatearTipo(item.tipo) }}</td>
+            <td class="px-4 py-4">{{ formatearSeveridad(item.severidad) }}</td>
+            <td class="px-4 py-4">{{ formatearEstado(item.estado) }}</td>
+            <td class="px-4 py-4 text-slate-400">{{ item.ubicacion }}</td>
+            <td class="rounded-r-lg px-4 py-4 text-slate-400">{{ item.hora }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-5 flex items-center justify-between text-sm text-slate-400">
+    <p>Mostrando 10 de 42 incidentes activos</p>
+
+    <div class="flex items-center gap-2">
+      <button type="button" class="rounded-md bg-[#07162f] px-3 py-2 text-slate-400">
+        ‹
+      </button>
+      <button type="button" class="rounded-md bg-slate-300 px-3 py-2 text-slate-900">
+        1
+      </button>
+      <button type="button" class="rounded-md bg-[#07162f] px-3 py-2 text-slate-300">
+        2
+      </button>
+      <button type="button" class="rounded-md bg-[#07162f] px-3 py-2 text-slate-300">
+        3
+      </button>
+      <button type="button" class="rounded-md bg-[#07162f] px-3 py-2 text-slate-400">
+        ›
+      </button>
+    </div>
+  </div>
+</section>

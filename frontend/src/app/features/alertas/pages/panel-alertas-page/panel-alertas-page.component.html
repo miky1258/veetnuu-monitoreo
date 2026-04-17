@@ -1,0 +1,17 @@
+<div class="space-y-5 bg-[#031a36] p-5 text-slate-100">
+  <app-filtros-alertas
+    [filtrosIniciales]="filtros()"
+    (filtrosAplicados)="aplicarFiltros($event)"
+  />
+
+  <div class="grid gap-5 xl:grid-cols-[minmax(0,1fr)_260px]">
+    <app-incidentes-criticos
+      [incidentes]="incidentesCriticos()"
+      (detalleSolicitado)="verDetalle($event)"
+    />
+
+    <app-resumen-alertas [resumen]="resumen()" />
+  </div>
+
+  <app-historial-alertas [historial]="historial()" />
+</div>

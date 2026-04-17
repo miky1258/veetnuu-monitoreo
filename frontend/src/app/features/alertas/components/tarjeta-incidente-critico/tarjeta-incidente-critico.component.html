@@ -1,0 +1,47 @@
+<article class="rounded-xl bg-[#07162f] p-4 transition hover:bg-[#0b1d3a]">
+  <div class="flex items-start gap-4">
+    <div class="flex h-14 w-14 items-center justify-center rounded-md bg-rose-700/90 text-white">
+      <svg
+        viewBox="0 0 24 24"
+        class="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 4L21 20H3L12 4z"></path>
+        <path d="M12 9v4"></path>
+        <path d="M12 17h.01"></path>
+      </svg>
+    </div>
+
+    <div class="min-w-0 flex-1">
+      <div class="flex items-start justify-between gap-3">
+        <h3 class="text-xl font-semibold text-slate-100">
+          {{ incidente.titulo }}
+        </h3>
+
+        <span class="text-xs text-slate-500">{{ incidente.tiempo }} ago</span>
+      </div>
+
+      <div class="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-400">
+        <span>{{ incidente.ubicacion }}</span>
+        <span class="text-amber-300">
+          {{ incidente.estado === 'en_ruta' ? 'En ruta' : incidente.estado === 'activa' ? 'Activa' : 'Atendida' }}
+        </span>
+      </div>
+
+      <div class="mt-4">
+        <button
+          type="button"
+          (click)="onVerDetalle()"
+          class="text-sm font-semibold uppercase tracking-[0.14em] text-slate-200 underline underline-offset-4 transition hover:text-white"
+        >
+          Ver detalles
+        </button>
+      </div>
+    </div>
+  </div>
+</article>

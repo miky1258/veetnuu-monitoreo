@@ -1,0 +1,39 @@
+<section class="rounded-2xl bg-[#0f2343] p-5">
+  <div class="mb-5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="text-slate-300">
+        <svg
+          viewBox="0 0 24 24"
+          class="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 4L21 20H3L12 4z"></path>
+          <path d="M12 9v4"></path>
+          <path d="M12 17h.01"></path>
+        </svg>
+      </span>
+
+      <h2 class="text-2xl font-semibold text-slate-100">
+        Incidentes críticos en vivo
+      </h2>
+    </div>
+
+    <span class="rounded bg-rose-800/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-rose-100">
+      Prioridad alta
+    </span>
+  </div>
+
+  <div class="space-y-4">
+    @for (incidente of incidentes; track incidente.id) {
+      <app-tarjeta-incidente-critico
+        [incidente]="incidente"
+        (verDetalle)="onDetalleSolicitado($event)"
+      />
+    }
+  </div>
+</section>

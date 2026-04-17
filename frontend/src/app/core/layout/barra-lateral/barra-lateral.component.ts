@@ -21,7 +21,7 @@ export class BarraLateralComponent {
 
   readonly itemsNavegacion: ItemNavegacion[] = [
     { etiqueta: 'Inicio', ruta: '/dashboard', icono: 'inicio' },
-    { etiqueta: 'Alertas', ruta: '/dashboard', icono: 'alertas' },
+    { etiqueta: 'Alertas', ruta: '/dashboard/alertas', icono: 'alertas' },
     { etiqueta: 'Estaciones', ruta: '/dashboard', icono: 'estaciones' },
     { etiqueta: 'Reportes', ruta: '/dashboard', icono: 'reportes' },
     { etiqueta: 'Ajustes', ruta: '/dashboard', icono: 'ajustes' },

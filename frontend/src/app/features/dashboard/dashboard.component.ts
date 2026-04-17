@@ -4,6 +4,7 @@ import { PanelAlertasComponent } from './components/panel-alertas/panel-alertas.
 import { MapaMonitoreoComponent } from './components/mapa-monitoreo/mapa-monitoreo.component';
 import { AlertaActiva } from './interfaces/alerta-activa.interface';
 import { MarcadorMapa } from './interfaces/marcador-mapa.interface';
+import { AlertasService } from '../alertas/services/alertas.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,19 +15,9 @@ import { MarcadorMapa } from './interfaces/marcador-mapa.interface';
 })
 export class DashboardComponent {
   private readonly router = inject(Router);
+  private readonly alertasService = inject(AlertasService);
 
-  readonly alertas: AlertaActiva[] = [
-    {
-      id: 'a1',
-      titulo: 'Pozoleee',
-      descripcion: 'A la jaiba chacalosa la estan chacaleando :o',
-      tiempo: '2M AGO',
-      prioridad: 'alta',
-      tipo: 'robo',
-      latitud: 17.0803251,
-      longitud: -96.7416772,
-    },
-  ];
+  readonly alertas: AlertaActiva[] = this.alertasService.obtenerAlertasDashboard();
 
   readonly alertaSeleccionada = signal<AlertaActiva | null>(null);
 
